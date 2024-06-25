@@ -4,7 +4,12 @@ import { CreateComponent } from './feature/create/create.component';
 
 export const routes: Routes = [
     { path: '', component: ListComponent,},
-    { path: 'create-product', component: CreateComponent},
-    
+    { path: 'create-product', 
+        loadComponent: () =>
+            import('./feature/create/create.component').then(
+                (m) => m.CreateComponent
+            ),
+    },
+
 
 ];
