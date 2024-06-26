@@ -38,11 +38,8 @@ export class CreateComponent {
       title: this.form.controls.title.value
     }) 
     .subscribe(() => {
-      this.matSnackBar.open('Poduto criado com sucesso!', 'ok', {
-        duration: 4000,
-        horizontalPosition: 'right',
-        verticalPosition: 'top'
-      });
+      this.matSnackBar.open('Poduto criado com sucesso!', 'ok');
+      
       this.router.navigateByUrl('/').catch(console.log)
     });
   }
